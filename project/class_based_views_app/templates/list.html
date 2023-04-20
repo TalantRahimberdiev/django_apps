@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="create/">create</a>
+    <table style="border-collapse: collapse; border: 1px solid black;">
+        <thead>
+            <th style="border: 1px solid black;">pk (delete)</th>
+            <th style="border: 1px solid black;"> subject (update)</th>
+            <th style="border: 1px solid black;">description(detailed)</th>
+        </thead>
+        {% for object in object_list %}
+        <tr>
+            <td style="border: 1px solid black;"><a href="delete/{{object.pk}}/">{{object.id}}</a></td>
+            <td style="border: 1px solid black;"><a href="update/{{object.pk}}/">{{object.subject}}</a> </td>
+            <td style="border: 1px solid black;"><a href="detail/{{object.pk}}/">{{object.description}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
